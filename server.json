@@ -1,0 +1,40 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Toalheiro Térmico Rotativo Stencial",
+            "price": "2.890,99",
+            "url": "/assets/products/product-one.png"
+        },
+        {
+            "id": 2,
+            "name": "Toalheiro Aquecido Elétrico Trilho Rotativo",
+            "price": "2.613,99",
+            "url": "/assets/products/product-two.png"
+        },
+        {
+            "id": 3,
+            "name": "Torneira para Banheiro Eclipse Quente Frio",
+            "price": "1.122,99",
+            "url": "/assets/products/product-three.png"
+        },
+        {
+            "id": 4,
+            "name": "Toalheiro Térmico sem Perfuração Inteligente (Adesivado na Parede)",
+            "price": "1.908,99",
+            "url": "/assets/products/product-four.png"
+        },
+        {
+            "id": 5,
+            "name": "Torneiras para Banheiro Fluxo Dourado Premium",
+            "price": "2.111,99",
+            "url": "/assets/products/product-five.png"
+        },
+        {
+            "id": 6,
+            "name": "Torneira para Pia de Cozinha",
+            "price": "1.122,99",
+            "url": "/assets/products/product-six.png"
+        }
+    ]
+}
