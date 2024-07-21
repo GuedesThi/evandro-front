@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { styled } from "@stitches/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,10 +9,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:3333/products');
-  const data = await response.json();
+  const filePath = path.join(process.cwd(), 'public', 'data.json');
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
+  const data = JSON.parse(jsonData);
 
-  return { props: { data } };
+  return { props: { data: data.products } };
 }
 
 interface Products {
@@ -51,7 +54,6 @@ export default function Home({ data }: HomeProps) {
 
       <ContentPage>
         <Sidebar style={{ right: showSidebar ? '0' : '-24rem' }}>
-
           <h2>CATEGORIAS</h2>
           {data.map(i => (
             <Categoric key={i.id} href={`/categoric/${i.id}`}>

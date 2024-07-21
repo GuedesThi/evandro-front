@@ -11,6 +11,7 @@ type LayoutChooserProps = {
 const layoutMap: { [key: string]: React.FC<{ children: React.ReactNode }> } = {
   '/login': NothingLayout,
   '/account': NothingLayout,
+  '/test': NothingLayout,
 };
 
 export function LayoutChooser({ children }: LayoutChooserProps) {
