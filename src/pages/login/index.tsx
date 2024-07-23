@@ -163,6 +163,7 @@ const LabelContainer = styled('div', {
         background: 'transparent',
         color: '$grayMain',
         fontSize: '1rem',
+        fontFamily: '$text',
 
         '@media(max-width: 720px)': {
             padding: '0.9rem 1.1rem',
