@@ -13,12 +13,14 @@ export default function Product() {
         const { id } = router.query;
 
         try {
-            const response = await fetch(`http://10.0.0.103:8080/product/${id}`, {
+            const response = await fetch(`http://91.108.125.131:8080/product/${id}`, {
                 method: 'GET'
             });
 
             if (response.ok) {
                 const data = await response.json();
+
+                console.log(data);
 
                 setTimeout(() => {
                     setProductData(data);

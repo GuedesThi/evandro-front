@@ -27,14 +27,21 @@ export default function CriarConta() {
     const router = useRouter();
 
     async function botaoApertado(data: any) {
+        console.log(data);
+
         try {
-            const response = await fetch('http://localhost:8080/auth/create', {
+            const response = await fetch('http://91.108.125.131:8080/auth/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify({
+                    username: data.username,
+                    email: data.email,
+                    password: data.password
+                })
             });
+            
 
             if (response.ok) {
                 setBackMessage('Usuário criado com sucesso');

@@ -17,9 +17,11 @@ export default function Account() {
     const router = useRouter();
 
     async function initialRequest(token: string) {
-        
+
+        console.log('Token sendo enviado:', token);
+        // 91.108.125.131
         try {
-            const response = await fetch('http://10.0.0.103:8080/auth/account', {
+            const response = await fetch('http://91.108.125.131:8080/auth/account', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -28,7 +30,8 @@ export default function Account() {
 
             if (response.ok) {
                 const userData = await response.json();
-                console.log(userData);
+                console.log('Dado recebido inicialmente', userData);
+
                 setUser(userData);
                 setNewName(user.name);
                 setAtualEmail(user.email);
@@ -37,6 +40,7 @@ export default function Account() {
             
             } else if (response.status === 403) {
                 router.replace('/login');
+
             }
 
         } catch (error) {
@@ -61,7 +65,7 @@ export default function Account() {
         console.log('Dados enviados:', dataToSend);
 
         try {
-            const response = await fetch('http://10.0.0.103:8080/auth/profile', {
+            const response = await fetch('http://91.108.125.131:8080/auth/profile', {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer ' + token,
@@ -73,6 +77,7 @@ export default function Account() {
             if (response.ok) {
                 const userData = await response.json(); 
                 console.log('Dados recebidos:', userData);
+                localStorage.setItem('token', userData.token);
                 setUser(userData);
                 setDataSaved(false);
 
@@ -103,15 +108,15 @@ export default function Account() {
     }, [user]);
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-
-        if (token == null || token == undefined) {
-            router.replace('/login');
-
-        } else {
-            sendNewData(token);
-        } 
-    }, [dataSaved]);
+        if (dataSaved) {
+            const token = localStorage.getItem('token');
+            if (token == null || token == undefined) {
+                router.replace('/login');
+            } else {
+                sendNewData(token);
+            }
+        }
+    }, [dataSaved]);    
 
     function handleMudarInformacao(informacao: string) {
         setInformacao(informacao);

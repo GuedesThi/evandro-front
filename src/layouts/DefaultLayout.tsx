@@ -52,7 +52,7 @@ export default function DefaultLayout({children}: DefaultLayoutProps) {
         
         try {
             // Enviamos o Token
-            const response = await fetch('http://10.0.0.103:8080/auth/account', {
+            const response = await fetch('http://91.108.125.131:8080/auth/account', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token

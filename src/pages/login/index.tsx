@@ -25,7 +25,7 @@ export default function Login() {
 
     async function botaoApertado(data: any) {
         try {
-            const response = await fetch('http://10.0.0.103:8080/auth', {
+            const response = await fetch('http://91.108.125.131:8080/auth', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
