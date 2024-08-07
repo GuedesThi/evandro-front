@@ -20,11 +20,13 @@ export default function Product() {
             if (response.ok) {
                 const data = await response.json();
 
-                console.log(data);
+                console.log('Dado enviado pela API', data);
 
-                setTimeout(() => {
+                /*setTimeout(() => {
                     setProductData(data);
-                }, 1000);
+                }, 1000);*/
+
+                setProductData(data);
                 
             }
         } catch (error) {
