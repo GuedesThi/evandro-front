@@ -30,7 +30,7 @@ export default function CriarConta() {
         console.log(data);
 
         try {
-            const response = await fetch('https://decasametais.com/api/auth/create', {
+            const response = await fetch('https://decasametais.com/auth/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
