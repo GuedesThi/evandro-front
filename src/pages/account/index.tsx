@@ -21,7 +21,7 @@ export default function Account() {
         console.log('Token sendo enviado:', token);
         // 91.108.125.131
         try {
-            const response = await fetch('http://91.108.125.131:8080/auth/account', {
+            const response = await fetch('https://decasametais.com/api/auth/account', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token
