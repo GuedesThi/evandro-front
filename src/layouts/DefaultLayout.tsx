@@ -52,7 +52,7 @@ export default function DefaultLayout({children}: DefaultLayoutProps) {
         
         try {
             // Enviamos o Token
-            const response = await fetch('https://decasametais.com/auth/account', {
+            const response = await fetch('https://api.decasametais.com/auth/account', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + token

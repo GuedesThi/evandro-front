@@ -13,7 +13,7 @@ export default function Product() {
         const { id } = router.query;
 
         try {
-            const response = await fetch(`https://decasametais.com/product/${id}`, {
+            const response = await fetch(`https://api.decasametais.com/product/${id}`, {
                 method: 'GET'
             });
 

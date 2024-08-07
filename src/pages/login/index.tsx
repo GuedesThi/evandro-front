@@ -25,7 +25,7 @@ export default function Login() {
 
     async function botaoApertado(data: any) {
         try {
-            const response = await fetch('https://decasametais.com/auth', {
+            const response = await fetch('https://api.decasametais.com/auth', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
